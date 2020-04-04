@@ -15,6 +15,9 @@ public class Horario {
         }
         String[] ini = inicio.split(":");
         String[] ter = termino.split(":");
+        if(ini.length!=2 || ter.length!=2){
+            return false;
+        }
         if(!ini[1].equals("00") || !ter[1].equals("00")){
             return false;
         }
