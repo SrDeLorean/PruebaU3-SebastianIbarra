@@ -12,11 +12,23 @@ public class Mensualidad {
     private boolean isPagada=false;
     private int refSocio;
     
+    /**
+     * Metodo que se encarga de cambiar la mensualidad de no pagada a pagada
+     * @return 
+     */
     public boolean pagarMensualidad(){
         this.isPagada=true;
         return isPagada;
     }
     
+    /**
+     * Metodo que se encarga en crear una mensualidad
+     * Pide un string "mes" y un int refSocio
+     * Ejemplo: lunes, 1 / martes, 2
+     * @param mes
+     * @param refSocio
+     * @return 
+     */
     public boolean crearMensualidad(String mes, int refSocio){
         if(!(mes instanceof String)){
             return false;
@@ -32,6 +44,14 @@ public class Mensualidad {
         return true;
     }
     
+    /**
+     * Metodo que se encarga en modificar una mensualidad
+     * Pide un string "mes", un int refSocio y un boolean pagada
+     * Ejemplo: lunes, 1, true / martes, 2, false
+     * @param mes
+     * @param refSocio
+     * @return 
+     */
     public boolean modificarMensualidad(String mes, int refSocio, boolean isPagada){
         if(!(mes instanceof String)){
             return false;

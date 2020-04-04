@@ -16,11 +16,27 @@ public class Multa {
     private boolean isPagada;
     private int refMensualidad;
     
+    /**
+     * Metodo que se encarga de cambiar el estado de una multa de no pagado a pagado
+     * @return 
+     */
     public boolean pagarMulta(){
         this.isPagada=true;
         return this.isPagada;
     }
     
+    /**
+     * Metodo que se encarga de crear una multa
+     * Recibe un string "razon", int "monto", int refMensualidad
+     * Nota: la razon puede ser de 2 tipos:
+     *    1._ violación del código del club por prestar la membresía
+     *    2._ cuenta del restaurante
+     * Nota2: cabe destacar que al ocupar la opcion 1 de arriba, si no ingresa 20000 no se lo guardara, es una revalidacion de la operacion
+     * @param razon
+     * @param monto
+     * @param refMensualdad
+     * @return 
+     */
     public boolean crearMulta(String razon, int monto, int refMensualdad){
         if(!(razon instanceof String)){
             return false;
@@ -46,6 +62,18 @@ public class Multa {
         return true; 
     }
     
+    /**
+     * Metodo que se encarga de modificar una multa
+     * Recibe un string "razon", int "monto", int refMensualidad
+     * Nota: la razon puede ser de 2 tipos:
+     *    1._ violación del código del club por prestar la membresía
+     *    2._ cuenta del restaurante
+     * Nota2: cabe destacar que al ocupar la opcion 1 de arriba, si no ingresa 20000 no se lo guardara, es una revalidacion de la operacion
+     * @param razon
+     * @param monto
+     * @param refMensualdad
+     * @return 
+     */
     public boolean modificarMulta(String razon, int monto, int refMensualdad){
         if(!(razon instanceof String)){
             return false;

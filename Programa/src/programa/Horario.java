@@ -9,6 +9,14 @@ public class Horario {
     private String inicio;
     private String termino;
 
+    /**
+     * Metodo que se encarga en crear un horario
+     * Se pide 2 string inicio y termino
+     * Formato hh:mm
+     * @param inicio
+     * @param termino
+     * @return 
+     */
     public boolean crearHorario(String inicio, String termino) {
         if(!(inicio instanceof String && termino instanceof String)){
             return false;
@@ -34,6 +42,14 @@ public class Horario {
         return true;
     }
     
+    /**
+     * Metodo que se encarga en modificar un horario
+     * Se pide 2 string inicio y termino
+     * Formato hh:mm
+     * @param inicio
+     * @param termino
+     * @return 
+     */
     public boolean modificarHorario(String inicio, String termino){
         if(!(inicio instanceof String && termino instanceof String)){
             return false;

@@ -15,7 +15,19 @@ public class Reserva {
     private String dia;
     private int idCancha;
     private int refSocio;
+    private int costo;
 
+    /**
+     * Metodo que se encarga de crear un recerva
+     * Pide un horario "horario", string "dia", int "idCancha", int refSocio
+     * Cabe descatar que los dias son de lunes a domingo
+     * Ejemplo: crearReserva(new Horario().crearHorario(12:00, 13:00), "lunes", 1, 1 );
+     * @param horario
+     * @param dia
+     * @param idCancha
+     * @param refSocio
+     * @return 
+     */
     public boolean crearReserva(Horario horario, String dia, int idCancha, int refSocio) {
         if(!(horario instanceof Horario)){
             return false;
@@ -39,6 +51,15 @@ public class Reserva {
         return true;
     }
     
+    /**
+     * Metodo que se encarga de crear un recerva
+     * Pide un horario "horario", string "dia"
+     * Cabe descatar que los dias son de lunes a domingo
+     * Ejemplo: modificarReserva(new Horario().crearHorario(12:00, 13:00), "lunes");
+     * @param horario
+     * @param dia
+     * @return 
+     */
     public boolean modificarReserva(Horario horario, String dia) {
         if(!(horario instanceof Horario)){
             return false;
