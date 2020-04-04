@@ -43,14 +43,27 @@ public class SocioTest {
     @Test
     public void testCrearSocio() {
         System.out.println("crearSocio");
-        String rut = "";
-        String nombre = "";
+        String rut = "19.392.599-5";
+        String nombre = "Sebastian Ibarra";
         Socio instance = new Socio();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.crearSocio(rut, nombre);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        rut = "19.392.599";
+        nombre = "Sebastian Ibarra";
+        instance = new Socio();
+        expResult = false;
+        result = instance.crearSocio(rut, nombre);
+        assertEquals(expResult, result);
+        
+        rut = "392.599-5";
+        nombre = "Sebastian Ibarra";
+        instance = new Socio();
+        expResult = false;
+        result = instance.crearSocio(rut, nombre);
+        assertEquals(expResult, result);
+        
     }
 
     /**
@@ -59,42 +72,14 @@ public class SocioTest {
     @Test
     public void testModificarSocio() {
         System.out.println("modificarSocio");
-        String rut = "";
-        String nombre = "";
+        String rut = "19.392.599-5";
+        String nombre = "Sebastian Ibarra";
         Socio instance = new Socio();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.modificarSocio(rut, nombre);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getRut method, of class Socio.
-     */
-    @Test
-    public void testGetRut() {
-        System.out.println("getRut");
-        Socio instance = new Socio();
-        String expResult = "";
-        String result = instance.getRut();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getNombre method, of class Socio.
-     */
-    @Test
-    public void testGetNombre() {
-        System.out.println("getNombre");
-        Socio instance = new Socio();
-        String expResult = "";
-        String result = instance.getNombre();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(rut, instance.getRut());
+        assertEquals(nombre, instance.getNombre());
     }
     
 }
