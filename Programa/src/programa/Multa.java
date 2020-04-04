@@ -17,18 +17,58 @@ public class Multa {
     private int refMensualidad;
     
     public boolean pagarMulta(){
-        
-        return false;
+        this.isPagada=true;
+        return this.isPagada;
     }
     
     public boolean crearMulta(String razon, int monto, int refMensualdad){
-        
-       return false; 
+        if(!(razon instanceof String)){
+            return false;
+        }
+        if(!(Integer.class.isInstance(monto) && Integer.class.isInstance(refMensualdad))){
+            return false;
+        }
+        if(monto<=0 || refMensualdad<0){
+            return false;
+        }
+        if(razon.equals("violación del código del club por prestar la membresía")){
+            if(monto!=20000){
+                return false;
+            }
+        }else{
+            if(!razon.equals("cuenta del restaurante")){
+                return false;
+            }
+        }
+        this.razon=razon;
+        this.monto=monto;
+        this.refMensualidad=refMensualdad;
+        return true; 
     }
     
     public boolean modificarMulta(String razon, int monto, int refMensualdad){
-        
-        return false;
+        if(!(razon instanceof String)){
+            return false;
+        }
+        if(!(Integer.class.isInstance(monto) && Integer.class.isInstance(refMensualdad))){
+            return false;
+        }
+        if(monto<=0 || refMensualdad<0){
+            return false;
+        }
+        if(razon.equals("violación del código del club por prestar la membresía")){
+            if(monto!=20000){
+                return false;
+            }
+        }else{
+            if(!razon.equals("cuenta del restaurante")){
+                return false;
+            }
+        }
+        this.razon=razon;
+        this.monto=monto;
+        this.refMensualidad=refMensualdad;
+        return true; 
     }
 
     public String getRazon() {
