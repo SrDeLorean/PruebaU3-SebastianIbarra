@@ -44,6 +44,7 @@ public class ReservaTest {
     public void testCrearReserva() {
         System.out.println("crearReserva");
         Horario horario = new Horario();
+        horario.crearHorario("12:00", "13:00");
         String dia = "lunes";
         int idCancha = 1;
         int refSocio = 1;
@@ -84,7 +85,47 @@ public class ReservaTest {
         result = instance.crearReserva(horario, dia, idCancha, refSocio);
         assertEquals(expResult, result);
         
+        //-------- TDD de lo que se me olvido del costo -------------
         
+        dia = "lunes";
+        horario.modificarHorario("20:00", "21:00");
+        idCancha = 1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = true;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        assertEquals(4000, instance.getCosto());
+        
+        dia = "sabado";
+        horario.modificarHorario("20:00", "21:00");
+        idCancha = 1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = true;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        assertEquals(6000, instance.getCosto());
+        
+        dia = "lunes";
+        horario.modificarHorario("9:00", "10:00");
+        idCancha = 1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = true;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        assertEquals(5000, instance.getCosto());
+        
+        dia = "sabado";
+        horario.modificarHorario("9:00", "10:00");
+        idCancha = 1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = true;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        assertEquals(7000, instance.getCosto());
         
     }
 
