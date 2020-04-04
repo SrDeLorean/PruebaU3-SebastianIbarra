@@ -11,7 +11,7 @@ package programa;
  */
 public class Mensualidad {
     
-    private int monto;
+    private int monto=200000;
     private int montoTotal;
     private String mes;
     private boolean isPagada;
@@ -22,12 +22,12 @@ public class Mensualidad {
         return false;
     }
     
-    public boolean crearMensualidad(){
+    public boolean crearMensualidad(String mes, int refSocio){
         
         return false;
     }
     
-    public boolean modificarMensualidad(){
+    public boolean modificarMensualidad(String mes, int refSocio, boolean isPagada){
         
         return false;
     }
