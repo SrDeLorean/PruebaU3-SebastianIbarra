@@ -10,6 +10,9 @@ public class Horario {
     private String termino;
 
     public boolean crearHorario(String inicio, String termino) {
+        if(!(inicio instanceof String && termino instanceof String)){
+            return false;
+        }
         String[] ini = inicio.split(":");
         String[] ter = termino.split(":");
         if(!ini[1].equals("00") || !ter[1].equals("00")){
@@ -29,6 +32,9 @@ public class Horario {
     }
     
     public boolean modificarHorario(String inicio, String termino){
+        if(!(inicio instanceof String && termino instanceof String)){
+            return false;
+        }
         String[] ini = inicio.split(":");
         String[] ter = termino.split(":");
         if(!ini[1].equals("00") || !ter[1].equals("00")){
