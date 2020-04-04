@@ -44,15 +44,48 @@ public class ReservaTest {
     public void testCrearReserva() {
         System.out.println("crearReserva");
         Horario horario = null;
-        String dia = "";
-        int idCancha = 0;
-        int refSocio = 0;
+        String dia = "lunes";
+        int idCancha = 1;
+        int refSocio = 1;
         Reserva instance = new Reserva();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.crearReserva(horario, dia, idCancha, refSocio);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+        dia = "dadasdas";
+        idCancha = 1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = false;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        
+        dia = "lunes";
+        idCancha = 5;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = false;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        
+        dia = "lunes";
+        idCancha = -1;
+        refSocio = 1;
+        instance = new Reserva();
+        expResult = false;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        
+        dia = "lunes";
+        idCancha = 1;
+        refSocio = -1;
+        instance = new Reserva();
+        expResult = false;
+        result = instance.crearReserva(horario, dia, idCancha, refSocio);
+        assertEquals(expResult, result);
+        
+        
+        
     }
 
     /**
@@ -62,69 +95,12 @@ public class ReservaTest {
     public void testModificarReserva() {
         System.out.println("modificarReserva");
         Horario horario = null;
-        String dia = "";
+        String dia = "lunes";
         Reserva instance = new Reserva();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.modificarReserva(horario, dia);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getHorario method, of class Reserva.
-     */
-    @Test
-    public void testGetHorario() {
-        System.out.println("getHorario");
-        Reserva instance = new Reserva();
-        Horario expResult = null;
-        Horario result = instance.getHorario();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getDia method, of class Reserva.
-     */
-    @Test
-    public void testGetDia() {
-        System.out.println("getDia");
-        Reserva instance = new Reserva();
-        String expResult = "";
-        String result = instance.getDia();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getIdCancha method, of class Reserva.
-     */
-    @Test
-    public void testGetIdCancha() {
-        System.out.println("getIdCancha");
-        Reserva instance = new Reserva();
-        int expResult = 0;
-        int result = instance.getIdCancha();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getRefSocio method, of class Reserva.
-     */
-    @Test
-    public void testGetRefSocio() {
-        System.out.println("getRefSocio");
-        Reserva instance = new Reserva();
-        int expResult = 0;
-        int result = instance.getRefSocio();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(dia, instance.getDia());
     }
     
 }
