@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package programa;
 
 /**
@@ -14,22 +9,43 @@ public class Mensualidad {
     private int monto=200000;
     private int montoTotal;
     private String mes;
-    private boolean isPagada;
+    private boolean isPagada=false;
     private int refSocio;
     
     public boolean pagarMensualidad(){
-        
-        return false;
+        this.isPagada=true;
+        return isPagada;
     }
     
     public boolean crearMensualidad(String mes, int refSocio){
-        
-        return false;
+        if(!(mes instanceof String)){
+            return false;
+        }
+        if(refSocio<0){
+            return false;
+        }
+        if(!mes.equals("enero") && !mes.equals("febrero") && !mes.equals("marzo") && !mes.equals("abril") && !mes.equals("mayo") && !mes.equals("junio") && !mes.equals("julio") && !mes.equals("agosto") && !mes.equals("septiembre") && !mes.equals("octubre") && !mes.equals("noviembre") && !mes.equals("diciembre")){
+            return false;
+        }
+        this.mes=mes;
+        this.refSocio=refSocio;
+        return true;
     }
     
     public boolean modificarMensualidad(String mes, int refSocio, boolean isPagada){
-        
-        return false;
+        if(!(mes instanceof String)){
+            return false;
+        }
+        if(refSocio<0){
+            return false;
+        }
+        if(!mes.equals("enero") && !mes.equals("febrero") && !mes.equals("marzo") && !mes.equals("abril") && !mes.equals("mayo") && !mes.equals("junio") && !mes.equals("julio") && !mes.equals("agosto") && !mes.equals("septiembre") && !mes.equals("octubre") && !mes.equals("noviembre") && !mes.equals("diciembre")){
+            return false;
+        }
+        this.mes=mes;
+        this.refSocio=refSocio;
+        this.isPagada=isPagada;
+        return true;
     }
 
     public int getMonto() {
