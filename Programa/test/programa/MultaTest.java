@@ -111,6 +111,27 @@ public class MultaTest {
         expResult = false;
         result = instance.crearMulta(razon, monto, refMensualdad);
         assertEquals(expResult, result);
+        
+        //--- new TDD por el descuento del 10% ---
+        razon = "cuenta del restaurante";
+        monto = 10000;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = true;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        int valor = (int) (monto-(monto*0.1));
+        assertEquals(valor, instance.getMonto());
+        
+        razon = "cuenta del restaurante";
+        monto = 20000;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = true;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        valor = (int) (monto-(monto*0.1));
+        assertEquals(valor, instance.getMonto());
     }
 
     /**
