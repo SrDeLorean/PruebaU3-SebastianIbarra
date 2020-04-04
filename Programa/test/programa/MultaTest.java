@@ -44,11 +44,10 @@ public class MultaTest {
     public void testPagarMulta() {
         System.out.println("pagarMulta");
         Multa instance = new Multa();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.pagarMulta();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(true, instance.isIsPagada());
     }
 
     /**
@@ -57,15 +56,61 @@ public class MultaTest {
     @Test
     public void testCrearMulta() {
         System.out.println("crearMulta");
-        String razon = "";
-        int monto = 0;
-        int refMensualdad = 0;
+        String razon = "violación del código del club por prestar la membresía";
+        int monto = 20000;
+        int refMensualdad = 1;
         Multa instance = new Multa();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.crearMulta(razon, monto, refMensualdad);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        razon = "cuenta del restaurante";
+        monto = 10000;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = true;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        
+        razon = "fasfaseq";
+        monto = 10000;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = false;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        
+        razon = "cuenta del restaurante";
+        monto = -1;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = false;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        
+        razon = "cuenta del restaurante";
+        monto = 10000;
+        refMensualdad = -1;
+        instance = new Multa();
+        expResult = false;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        
+        razon = "violación del código del club por prestar la membresía";
+        monto = -1;
+        refMensualdad = 1;
+        instance = new Multa();
+        expResult = false;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
+        
+        razon = "violación del código del club por prestar la membresía";
+        monto = 20000;
+        refMensualdad = -1;
+        instance = new Multa();
+        expResult = false;
+        result = instance.crearMulta(razon, monto, refMensualdad);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -74,71 +119,15 @@ public class MultaTest {
     @Test
     public void testModificarMulta() {
         System.out.println("modificarMulta");
-        String razon = "";
-        int monto = 0;
-        int refMensualdad = 0;
+        String razon = "violación del código del club por prestar la membresía";
+        int monto = 20000;
+        int refMensualdad = 1;
         Multa instance = new Multa();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.modificarMulta(razon, monto, refMensualdad);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getRazon method, of class Multa.
-     */
-    @Test
-    public void testGetRazon() {
-        System.out.println("getRazon");
-        Multa instance = new Multa();
-        String expResult = "";
-        String result = instance.getRazon();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getMonto method, of class Multa.
-     */
-    @Test
-    public void testGetMonto() {
-        System.out.println("getMonto");
-        Multa instance = new Multa();
-        int expResult = 0;
-        int result = instance.getMonto();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isIsPagada method, of class Multa.
-     */
-    @Test
-    public void testIsIsPagada() {
-        System.out.println("isIsPagada");
-        Multa instance = new Multa();
-        boolean expResult = false;
-        boolean result = instance.isIsPagada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getRefMensualidad method, of class Multa.
-     */
-    @Test
-    public void testGetRefMensualidad() {
-        System.out.println("getRefMensualidad");
-        Multa instance = new Multa();
-        int expResult = 0;
-        int result = instance.getRefMensualidad();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(razon, instance.getRazon());
+        assertEquals(monto, instance.getMonto());
+        assertEquals(refMensualdad, instance.getRefMensualidad());
     }
     
 }
