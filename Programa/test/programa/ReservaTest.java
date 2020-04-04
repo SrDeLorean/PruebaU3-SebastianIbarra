@@ -43,7 +43,7 @@ public class ReservaTest {
     @Test
     public void testCrearReserva() {
         System.out.println("crearReserva");
-        Horario horario = null;
+        Horario horario = new Horario();
         String dia = "lunes";
         int idCancha = 1;
         int refSocio = 1;
@@ -94,7 +94,7 @@ public class ReservaTest {
     @Test
     public void testModificarReserva() {
         System.out.println("modificarReserva");
-        Horario horario = null;
+        Horario horario = new Horario();
         String dia = "lunes";
         Reserva instance = new Reserva();
         boolean expResult = true;
