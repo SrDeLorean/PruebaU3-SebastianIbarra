@@ -44,11 +44,10 @@ public class MensualidadTest {
     public void testPagarMensualidad() {
         System.out.println("pagarMensualidad");
         Mensualidad instance = new Mensualidad();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.pagarMensualidad();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(true, instance.isIsPagada());
     }
 
     /**
@@ -58,11 +57,24 @@ public class MensualidadTest {
     public void testCrearMensualidad() {
         System.out.println("crearMensualidad");
         Mensualidad instance = new Mensualidad();
-        boolean expResult = false;
-        boolean result = instance.crearMensualidad();
+        String mes= "enero";
+        int refSocio = 1;
+        boolean expResult = true;
+        boolean result = instance.crearMensualidad(mes, refSocio);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        mes= "gqwease";
+        refSocio = 1;
+        expResult = false;
+        result = instance.crearMensualidad(mes, refSocio);
+        assertEquals(expResult, result);
+        
+        mes= "enero";
+        refSocio = -1;
+        expResult = false;
+        result = instance.crearMensualidad(mes, refSocio);
+        assertEquals(expResult, result);
+        
     }
 
     /**
@@ -72,81 +84,15 @@ public class MensualidadTest {
     public void testModificarMensualidad() {
         System.out.println("modificarMensualidad");
         Mensualidad instance = new Mensualidad();
-        boolean expResult = false;
-        boolean result = instance.modificarMensualidad();
+        String mes= "enero";
+        int refSocio = 1;
+        boolean isPagada = true;
+        boolean expResult = true;
+        boolean result = instance.modificarMensualidad(mes, refSocio, isPagada);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(mes, instance.getMes());
+        assertEquals(refSocio, instance.getRefSocio());
+        assertEquals(isPagada, instance.isIsPagada());
     }
 
-    /**
-     * Test of getMonto method, of class Mensualidad.
-     */
-    @Test
-    public void testGetMonto() {
-        System.out.println("getMonto");
-        Mensualidad instance = new Mensualidad();
-        int expResult = 0;
-        int result = instance.getMonto();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getMontoTotal method, of class Mensualidad.
-     */
-    @Test
-    public void testGetMontoTotal() {
-        System.out.println("getMontoTotal");
-        Mensualidad instance = new Mensualidad();
-        int expResult = 0;
-        int result = instance.getMontoTotal();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getMes method, of class Mensualidad.
-     */
-    @Test
-    public void testGetMes() {
-        System.out.println("getMes");
-        Mensualidad instance = new Mensualidad();
-        String expResult = "";
-        String result = instance.getMes();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isIsPagada method, of class Mensualidad.
-     */
-    @Test
-    public void testIsIsPagada() {
-        System.out.println("isIsPagada");
-        Mensualidad instance = new Mensualidad();
-        boolean expResult = false;
-        boolean result = instance.isIsPagada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getRefSocio method, of class Mensualidad.
-     */
-    @Test
-    public void testGetRefSocio() {
-        System.out.println("getRefSocio");
-        Mensualidad instance = new Mensualidad();
-        int expResult = 0;
-        int result = instance.getRefSocio();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
