@@ -111,7 +111,7 @@ public class Menu {
             int montoTotal=0;
             for(Map.Entry<Integer, Multa> entry : multas.entrySet()){
                 Multa multa = entry.getValue();
-                if(multa.getRefMensualidad()==idMensualidad){
+                if(multa.getRefMensualidad()==idMensualidad && !multa.isIsPagada()){
                     montoTotal += multa.getMonto();
                 }
             }
