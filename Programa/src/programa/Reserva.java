@@ -44,6 +44,19 @@ public class Reserva {
         if(!dia.equals("lunes") && !dia.equals("martes") && !dia.equals("miercoles") && !dia.equals("jueves") && !dia.equals("viernes") && !dia.equals("sabado") &&!dia.equals("domingo")){            
             return false;
         }
+        if(horario.getInicio().equals("18:00") || horario.getInicio().equals("19:00") || horario.getInicio().equals("20:00") || horario.getInicio().equals("21:00") || horario.getInicio().equals("22:00")){
+            if(dia.equals("sabado") || dia.equals("domingo")){
+                this.costo=6000;
+            }else{
+                this.costo=4000;
+            }
+        }else{
+            if(dia.equals("sabado") || dia.equals("domingo")){
+                this.costo=7000;
+            }else{
+                this.costo=5000;
+            }
+        }
         this.horario=horario;
         this.dia=dia;
         this.idCancha=idCancha;
@@ -89,6 +102,10 @@ public class Reserva {
 
     public int getRefSocio() {
         return refSocio;
+    }
+
+    public int getCosto() {
+        return costo;
     }
     
 }

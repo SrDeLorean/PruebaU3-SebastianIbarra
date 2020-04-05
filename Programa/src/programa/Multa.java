@@ -50,14 +50,18 @@ public class Multa {
         if(razon.equals("violación del código del club por prestar la membresía")){
             if(monto!=20000){
                 return false;
+            }else{
+                this.monto=monto;
             }
         }else{
             if(!razon.equals("cuenta del restaurante")){
                 return false;
+            }else{
+                int valor = (int) (monto-(monto*0.1));
+                this.monto=valor;
             }
         }
         this.razon=razon;
-        this.monto=monto;
         this.refMensualidad=refMensualdad;
         return true; 
     }
@@ -87,14 +91,18 @@ public class Multa {
         if(razon.equals("violación del código del club por prestar la membresía")){
             if(monto!=20000){
                 return false;
+            }else{
+                this.monto=monto;
             }
         }else{
             if(!razon.equals("cuenta del restaurante")){
                 return false;
+            }else{
+                int valor = (int) (monto-(monto*0.1));
+                this.monto=valor;
             }
         }
         this.razon=razon;
-        this.monto=monto;
         this.refMensualidad=refMensualdad;
         return true; 
     }
